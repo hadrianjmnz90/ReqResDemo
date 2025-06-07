@@ -1,10 +1,10 @@
-package org.reqres.tests;
+package org.reqres.tests.positive;
 
 import io.restassured.RestAssured;
 import org.reqres.ReqResBase;
 import org.testng.annotations.Test;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
-public class validateUsersSchemaTest extends ReqResBase {
+public class ValidateUsersSchemaTest extends ReqResBase {
 
     @Test
     public void validateUsersSchema() {

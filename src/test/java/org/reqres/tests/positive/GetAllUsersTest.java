@@ -1,4 +1,4 @@
-package org.reqres.tests;
+package org.reqres.tests.positive;
 
 
 import io.restassured.RestAssured;
@@ -7,7 +7,7 @@ import org.reqres.ReqResBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class getAllUsersTest extends ReqResBase {
+public class GetAllUsersTest extends ReqResBase {
 
     @Test
     public static void getAllUsers() {
