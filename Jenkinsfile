@@ -4,8 +4,9 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/hadrianjmnz90/ReqResDemo'
-            }
+                    git branch: 'main',
+                        url: 'https://github.com/hadrianjmnz90/ReqResDemo'
+                }
         }
 
         stage('Build & Test') {
