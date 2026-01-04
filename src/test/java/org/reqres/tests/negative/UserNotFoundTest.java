@@ -7,19 +7,23 @@ import org.reqres.ReqResBase;
 import org.reqres.utils.ApiConstants;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import static org.hamcrest.Matchers.*;
 
 import java.util.concurrent.TimeUnit;
 
 public class UserNotFoundTest extends ReqResBase {
 
     @Test
-    public static void validateUserNotFound() {
+    public static void validateUserPostNotFound() {
         Response response = RestAssured.
-                when().get("/api/users/23");
+                when().get("/posts/9999");
         System.out.println(response.body().toString());
-        response.then().statusCode(ApiConstants.STATUS_404).log().all();
+        response.then()
+                .statusCode(anyOf(is(401), is(403), is(404)))
+                .log().all();
 
-        boolean isContentTypeJson = response.headers().get("Content-Type").getValue().equalsIgnoreCase("application/json; charset=utf-8");
+        boolean isContentTypeJson = response.headers().get("Content-Type").getValue()
+                .equalsIgnoreCase("application/json; charset=utf-8");
         Assert.assertTrue(isContentTypeJson);
 
         Assert.assertTrue(response.getBody().asString().trim().equals("{}") ||

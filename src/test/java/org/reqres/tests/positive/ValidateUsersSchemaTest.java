@@ -11,7 +11,7 @@ public class ValidateUsersSchemaTest extends ReqResBase {
         RestAssured
                 .given()
                 .when()
-                .get("/api/users?page=2")
+                .get("/users?page=2")
                 .then()
                 .assertThat()
                 .statusCode(200)
