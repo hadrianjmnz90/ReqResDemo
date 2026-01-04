@@ -6,26 +6,26 @@
     <artifactId>ReqRestDemo</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
-
     <name>ReqRestDemo</name>
     <url>http://maven.apache.org</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
-            <version>5.4.0</version>
+            <version>6.0.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>json-schema-validator</artifactId>
-            <version>5.4.0</version>
+            <version>6.0.0</version>
             <scope>test</scope>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.testng/testng -->
@@ -37,12 +37,12 @@
         </dependency>
     </dependencies>
     <build>
-    <plugins>
-    <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>3.0.0-M9</version>
-    </plugin>
-    </plugins>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.2.5</version>
+            </plugin>
+        </plugins>
     </build>
 </project>

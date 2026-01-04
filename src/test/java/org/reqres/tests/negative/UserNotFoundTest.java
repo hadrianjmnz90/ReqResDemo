@@ -16,6 +16,7 @@ public class UserNotFoundTest extends ReqResBase {
     public static void validateUserNotFound() {
         Response response = RestAssured.
                 when().get("/api/users/23");
+        System.out.println(response.body().toString());
         response.then().statusCode(ApiConstants.STATUS_404).log().all();
 
         boolean isContentTypeJson = response.headers().get("Content-Type").getValue().equalsIgnoreCase("application/json; charset=utf-8");
@@ -27,7 +28,5 @@ public class UserNotFoundTest extends ReqResBase {
 
         Assert.assertTrue ( response.timeIn(TimeUnit.MILLISECONDS)
                 < ApiConstants.ACCEPTABLE_RESPONSE_TIME, "Response time exceeded the threshold");
-
     }
-
 }

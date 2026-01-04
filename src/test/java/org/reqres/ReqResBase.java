@@ -13,7 +13,6 @@ public class ReqResBase {
         RestAssured.baseURI = "https://reqres.in/";
         RequestSpecification requestSpec = given()
                 .header("x-api-key", "reqres-free-v1");
-
         RestAssured.requestSpecification = requestSpec;
     }
 }
